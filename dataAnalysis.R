@@ -1,8 +1,7 @@
 ## load packages
 library(tidyverse)#for loading data, visualization, ...
 library(lmerTest)#load package for repeated measures ANOVA
-library(emmeans)
-library(RColorBrewer)
+library(emmeans)#post-hoc
 
 ## load data
 setwd("C:/Users/ahren/Documents/repos/Intro-R-Psychoacoustics")
