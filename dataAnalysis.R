@@ -29,7 +29,7 @@ f+geom_boxplot()+geom_jitter(width=.1,shape=4)
 
 f+geom_boxplot()+geom_jitter(aes(colour=ListenerType),width=.1,shape=4)
 
-f+geom_boxplot()+geom_jitter(aes(colour=ListenerType),width=.1,shape=4)+theme_bw
+f+geom_boxplot()+geom_jitter(aes(colour=ListenerType),width=.1,shape=4)+theme_bw()
 
 f+geom_boxplot()+geom_jitter(aes(colour=ListenerType),width=.1,shape=4)+theme_bw()+labs(y="SRT [dB]",x="")
 
@@ -48,6 +48,7 @@ anova(model2)
 ranova(model2)
 
 # multiple comparisons
-emm <- emmeans(model1, ~ Condition,lmer.df = "satterthwaite")
+emm <- emmeans(model2, ~ Condition,lmer.df = "satterthwaite")
 test(emm)
-rbind(pairs(emm), adjust="bonferroni")
+pairs(emm)
+pairs(emm, adjust="bonferroni")
